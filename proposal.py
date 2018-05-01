@@ -8,12 +8,12 @@ from sklearn.metrics import confusion_matrix
 
 # read in files & filter out blank lines
 print 'reading in data'
-full_dataset = pd.read_csv("data/flights.csv")
+full_dataset = pd.read_csv("~/Documents/Junior/CS221/flight-delays/data/flights.csv")
 full_dataset = full_dataset[np.isfinite(full_dataset['ARRIVAL_DELAY'])]
 print 'done reading data'
 
 # sample a portion of the data set b/c the dataset contains 5M+ rows
-sample_size = 10000
+sample_size = 100000
 sampled_data = full_dataset.sample(sample_size)
 
 baseline_features = sampled_data[['AIRLINE','ORIGIN_AIRPORT', 'DESTINATION_AIRPORT','SCHEDULED_DEPARTURE']]
